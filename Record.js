@@ -9,6 +9,7 @@ const recordSchema = new mongoose.Schema({
   errorPercentage: { type: Number, required: true },
   language: { type: String, required: true },
   totalTimeTaken: { type: Number, required: true },
+  timeLog: { type: Object },
   task: { type: String, required: true },
 });
 
