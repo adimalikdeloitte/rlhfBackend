@@ -31,6 +31,155 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
+const javaCategories = {
+  "Data structures": [
+    "Searching",
+    "Sorting",
+    "Linked List",
+    "Stack",
+    "Queue",
+    "Hashset",
+    "Hashmap",
+    "Binary Tree",
+    "Graph",
+    "Binary Search Tree",
+    "Heap",
+    "Arrays",
+    "Trie",
+    "Treemap",
+    "Arraylist",
+    "Vector",
+    "Deque",
+    "Hashtable",
+  ],
+  AWS: [
+    "SDK",
+    "API Gateway",
+    "DynamoDB",
+    "RDS",
+    "EC2",
+    "S3",
+    "Lambda",
+    "Virtual Private Cloud (VPC)",
+    "Beanstalk",
+    "IAM",
+    "CDK",
+  ],
+  "Pattern Printing": [],
+  Collections: [],
+  "Java Object Oriented Programming": [
+    "Multithreading",
+    "Inheritance",
+    "Multi processing",
+    "Method overriding",
+    "Method overloading",
+    "Interface",
+    "Abstraction",
+    "Constructors",
+    "Encapsulation",
+    "Polymorphism",
+    "Generics",
+    "File I/O and Serialization",
+    "Reflection API",
+    "Design Patterns",
+    "Enumerations",
+    "Exception handling",
+    "Getters & Setters",
+    "Access Modifiers",
+    "Loops",
+    "Strings",
+    "Control statements",
+    "Composition",
+    "Packages",
+  ],
+  "File Handling": [],
+  Regex: [],
+  "Date and Time": [],
+  Applet: [],
+  "Spring boot": [],
+  Lambda: [],
+  Swings: ["MVC", "Event Handling"],
+  "Java 8 Stream": [],
+  "Java-fx": [],
+  Maven: [],
+  "Apache POI": [],
+  Eclipse: [],
+  "Spring-MVC": [],
+  Servlet: [],
+  Hibernate: [],
+  JDBC: [],
+  "AWT and Events": [],
+  "Math Operations": [],
+  Database: [],
+  Networking: [],
+  "Remote Method Invocation (RMI)": ["Stub", "Skeleton"],
+  "Java ServerFaces (JSF)": [],
+  "Java Server Pages (JSP)": [],
+  "Java Assertion": [],
+  JUnit: [],
+  JFrame: [],
+  "Control statements": [],
+};
+
+const pythonCategories = {
+  "Data structures": [
+    "Searching",
+    "Linked List",
+    "Stack",
+    "Queue",
+    "Hashmap",
+    "Binary Tree",
+    "Graph",
+    "Binary Search Tree",
+    "Arrays",
+  ],
+  AWS: [
+    "SDK",
+    "API Gateway",
+    "DynamoDB",
+    "RDS",
+    "EC2",
+    "S3",
+    "Lambda",
+    "Virtual Private Cloud (VPC)",
+    "Beanstalk",
+    "IAM",
+    "CDK",
+  ],
+  "Object Oriented Programming": [
+    "Multi processing",
+    "Method overriding",
+    "Method overloading",
+    "Interface",
+    "Abstraction",
+    "Constructors",
+    "Encapsulation",
+    "Generics",
+    "File I/O and Serialization",
+    "Reflection API",
+    "Design Patterns",
+    "Enumerations",
+  ],
+  Libraries: [
+    "Pandas Data Aggregations",
+    "SkLearn for ML",
+    "Matplotlib for visualizations",
+    "numpy",
+  ],
+};
+
+app.get("/cqJavaCategory", (req, res) => {
+  res.status(200).json(javaCategories);
+});
+
+app.get("/cqPythonCategory", (req, res) => {
+  res.status(200).json(pythonCategories);
+});
+
+app.get("/cqJavaScriptCategory", (req, res) => {
+  res.status(200).json(javaCategories);
+});
+
 // Route to handle POST requests
 app.post("/records", (req, res) => {
   const recordData = req.body;
