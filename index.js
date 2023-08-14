@@ -132,6 +132,10 @@ const pythonCategories = {
     "Graph",
     "Binary Search Tree",
     "Arrays",
+    "Divide & Conquer",
+    "Space Complexity",
+    "Circular Linked List",
+    "Heap",
   ],
   AWS: [
     "SDK",
@@ -145,6 +149,7 @@ const pythonCategories = {
     "Beanstalk",
     "IAM",
     "CDK",
+    "CI/CD",
   ],
   "Object Oriented Programming": [
     "Multi processing",
@@ -159,13 +164,20 @@ const pythonCategories = {
     "Reflection API",
     "Design Patterns",
     "Enumerations",
+    "Multithreading",
   ],
   Libraries: [
     "Pandas Data Aggregations",
     "SkLearn for ML",
     "Matplotlib for visualizations",
     "numpy",
+    "Normal Math operations",
+    "CSV",
+    "sklearn for ML",
+    "sqlite",
+    "matplotlib for visualizations",
   ],
+  Threading: ["MultiThreading"],
 };
 
 app.get("/cqJavaCategory", (req, res) => {
