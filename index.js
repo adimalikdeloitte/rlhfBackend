@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const Record = require("./Record");
 const Rejection = require("./Rejection");
 const cors = require("cors");
+const xlsx = require("xlsx");
+const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -119,6 +121,7 @@ const javaCategories = {
   JUnit: [],
   JFrame: [],
   "Control statements": [],
+  Multithreading: [],
 };
 
 const pythonCategories = {
