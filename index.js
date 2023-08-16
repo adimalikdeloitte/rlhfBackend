@@ -66,6 +66,7 @@ const javaCategories = {
     "Beanstalk",
     "IAM",
     "CDK",
+    "DocumentDB",
   ],
   "Pattern Printing": [],
   Collections: [],
@@ -153,6 +154,7 @@ const pythonCategories = {
     "IAM",
     "CDK",
     "CI/CD",
+    "DocumentDB",
   ],
   "Object Oriented Programming": [
     "Multi processing",
@@ -247,6 +249,40 @@ app.post("/check-file", (req, res) => {
     .catch((error) => {
       res.status(500).json({ error: "Error checking file" });
     });
+});
+
+app.get("/get-cw-annotator-mapping", (req, res) => {
+  const filePath = "updatedtags.xlsx"; // Provide the actual path to your Excel file
+  const workbook = xlsx.readFile(filePath);
+  const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+  const excelData = xlsx.utils.sheet_to_json(worksheet, { header: 1 });
+
+  const jsonStructure = {};
+
+  excelData.slice(1).forEach((row) => {
+    const done = row[0];
+    const l1 = row[1];
+    const l2 = row[2];
+    const questionPrompt = row[3];
+    const annotatorName = row[4];
+
+    if (!annotatorName) return; // Skip rows without an annotator name
+
+    const dataEntry = {
+      L1: l1,
+      L2: l2,
+      QuestionPrompt: questionPrompt,
+      Done: done || "n", // Default to "n" if the "Done" column is empty
+    };
+
+    if (!jsonStructure[annotatorName]) {
+      jsonStructure[annotatorName] = [];
+    }
+
+    jsonStructure[annotatorName].push(dataEntry);
+  });
+
+  res.json(jsonStructure);
 });
 
 // Start the server
