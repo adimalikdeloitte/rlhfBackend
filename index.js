@@ -178,6 +178,7 @@ const pythonCategories = {
     "matplotlib for visualizations",
   ],
   Threading: ["MultiThreading"],
+  "Computer Vision": ["OpenCV", "SciPy", "Pillow", "sckit-image"],
 };
 
 app.get("/cqJavaCategory", (req, res) => {
